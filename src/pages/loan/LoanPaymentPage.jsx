@@ -42,7 +42,7 @@ const LoanPaymentPage = ({ authUser }) => {
         loans.filter(
           loan =>
             loan.customerName.toLowerCase().includes(term) ||
-            loan._id.toLowerCase().includes(term)
+            loan.transaction._id.toLowerCase().includes(term)
         )
       );
     }
@@ -86,7 +86,7 @@ const LoanPaymentPage = ({ authUser }) => {
       <Typography variant="h5" mb={2}>Customer Loans</Typography>
 
       <TextField
-        placeholder="Search by Customer Name or Loan ID"
+        placeholder="Search by Customer Name or Transaction ID"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         fullWidth
